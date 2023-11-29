@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<style>
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+i,
+select {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 160px;
+}
+
+button {
+    cursor: pointer;
+    outline: 0;
+    width: 180px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #2C3138;
+    margin-top: 40px;
+    overflow: hidden;
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+}
+
+button::after {
+    content: "";
+    position: relative;
+    top: -40px;
+    display: block;
+    width: 48px;
+    height: 107%;
+    background-color: #000;
+    margin-top: -1px;
+    margin-left: -7px;
+    border-radius: 6px 0 0 6px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button::before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 46px;
+    margin-left: -7px;
+    margin-top: -1px;
+    -webkit-transition: all 200ms cubic-bezier(0.25, 0.75, 0.5, 1.25);
+    transition: all 200ms cubic-bezier(0.25, 0.75, 0.5, 1.25);
+}
+
+.box-1:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #00BF9C;
+}
+
+.box-2:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #db50d0;
+}
+
+.box-3:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #121f2b;
+}
+
+.box-4:hover button::before {
+    width: 120%;
+    opacity: .8;
+    background-color: #d33535;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 80vw;
+    height: 100vh;
+    margin-left: 6vw;
+    /* transform:rotateX(7deg) rotateZ(-4deg) rotateY(13deg) scale3d(1, 1, -0.9); */
+    -webkit-transform: rotateX(23deg) rotateZ(-9deg) rotateY(15deg) scale3d(1, 1, -0.9);
+            transform: rotateX(23deg) rotateZ(-9deg) rotateY(15deg) scale3d(1, 1, -0.9);
+}
+
+.box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    will-change: transform;
+}
+
+.box:hover .cover {
+    -webkit-transform: translateY(-14px) scale(1.04);
+            transform: translateY(-14px) scale(1.04);
+}
+
+.box-1 button {
+    border: 1px solid #00BF9C;
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-1 button::after {
+    content: "";
+    background-color: #00BF9C;
+    top: -85px
+}
+
+.box-2 button {
+    border: 1px solid #653EE6;
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-2 button::after {
+    content: "";
+    background-color: #ea00ff;
+    top: -85px
+}
+
+.box-3 button {
+    border: 1px solid #335c99;
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-3 button::after {
+    content: "";
+    background-color: rgb(97, 97, 97);
+    top: -85px
+}
+
+.box-4 button {
+    border: 1px solid #ff0000;
+    color: #fff;
+    font-size: 22px;
+    text-align: right;
+    padding-right: 20px;
+    line-height: 40px;
+}
+
+.box-4 button::after {
+    content: "";
+    background-color: #f02222;
+    top: -85px
+}
+
+.cover {
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    will-change: transform;
+}
+
+.cover img {
+    -webkit-transition: all 260ms ease-in-out;
+    transition: all 260ms ease-in-out;
+}
+
+.box .cover::after {
+    content: "";
+    z-index: -99;
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    display: block;
+    width: 160px;
+    height: 214px;
+    opacity: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 160px 214px;
+    -webkit-filter: blur(24px);
+            filter: blur(24px);
+    -webkit-transition: all 260ms ease-in-out;
+    transition: all 260ms ease-in-out;
+    will-change: transform;
+    -webkit-transform: scale(.6);
+            transform: scale(.6);
+}
+
+.box:hover .cover::after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+
+.box-1 .cover::after {
+    background-image: url('https://infoinspired.com/wp-content/uploads/2013/12/Full-Size-WhatsApp-Profile-Pic-Squre_Round.jpg');
+}
+
+.box-2 .cover::after {
+    background-image: url('https://repostinstagram.com/wp-content/uploads/2022/01/instagram-logo.jpg');
+}
+
+.box-3 .cover::after {
+    background-image: url('https://i.abcnewsfe.com/a/96f823f4-85a6-499a-9c8a-08e6b7818372/230724_techbytes_hpMain_16x9.jpg?w=992');
+}
+
+.box-4 .cover::after {
+    background-image: url('https://www.youtube.com/img/desktop/yt_1200.png');
+}
+
+.box-1 button div::before {
+    content: 'WhatsApp';
+    position: relative;
+    top: -44px;
+    right: -50px;
+    color: #00BF9C;
+    font-size: 21px;
+    font-weight: 300;
+}
+link {
+    display: none;
+}
+
+.box-1:hover button div::before {
+    color: #fff;
+}
+
+.box-2 button div::before {
+    content: 'Instagram';
+    position: relative;
+    top: -44px;
+    right: -57px;
+    color: rgb(158, 55, 255);
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-2:hover button div::before {
+    color: #fff;
+}
+
+.box-3 button div::before {
+    content: 'Tweeter';
+    position: relative;
+    top: -44px;
+    right: -60px;
+    color: #ebebeb;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-3:hover button div::before {
+    color: #fff;
+}
+
+.box-4 button div::before {
+    content: 'Youtube';
+    position: relative;
+    top: -44px;
+    right: -60px;
+    color: #ff2727;
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.box-4:hover button div::before {
+    color: #fff;
+}
+
+.dr {
+position: absolute;
+  bottom: 16px; 
+  right: 16px;
+  width:100px;
+}
+
+      body {
+     background-image: url("img/korek.jpg");
+     background-repeat: no-repeat;
+     background-size:cover
+     }
+    .class-anda a{text-decoration:none} 
+a{text-decoration:none}
+
+.btn2 {
+background-color: #fbff00;
+border-radius: 20%;
+color: white;
+padding: 10px 19px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+.btn2:hover{
+opacity:0.9;
+}
+.animasi-teks {
+      font-size: 29px;
+      width: 100%;
+      white-space:nowrap;
+      overflow:hidden;
+      -webkit-animation: typing 3s steps(40, end);
+      animation: animasi-ketik 3s steps(40, end);
+    }
+    @keyframes animasi-ketik{
+      from { width: 0; }
+    }
+    @-webkit-keyframes animasi-ketik{
+      from { width: 0; }
+    }
+</style>
+<style type="text/css">
+    a{text-decoration: none; font-size: 20px;font-family: sans-serif;padding: 14px 10px}
+    ul{padding: 14px}
+    li{list-style: none; display: inline;}
+    li a{background: #222; color:#d4d4d4;}
+    li a:hover{background: #4da4ff; color:#fff;}
+    .navi{background: #222; height: 50px}
+    </style>
+<body>
+        <nav class="navi">
+        <ul>
+        <li><a style="color:rgb(255, 0, 0)" href="index.html">Home</a></li>
+        <li><a style="color:rgb(255, 0, 0)" href="SEJARAH PANCASILA.pdf">CV Me</a></li>
+        <li><a style="color:rgb(255, 0, 0)" href="contact.html" href="#contact" onmouseover="alert(' Anda sudah ada di tab ini ')">Contact</a></li>
+        <li><a style="color:rgb(255, 0, 0)" href="about.html">About</a></li>
+        </ul>
+        </nav>
+        <br>    
+        <div align="left" class="animasi-teks" style="font-family: 'Alegreya Sans SC', sans-serif; color:rgb(255, 255, 255)"><h3>Contact Me</h3></div>
+    <div class="container">
+        <div class="box box-1">
+            <div class="cover"><img src="https://infoinspired.com/wp-content/uploads/2013/12/Full-Size-WhatsApp-Profile-Pic-Squre_Round.jpg" alt=""></div>
+            <button type="button" onclick="location.href='https://web.whatsapp.com/'">
+            <div>Whatsapp</div>
+            </button>
+        </div>
+        <div class="box box-2">
+            <div class="cover"><img src="https://repostinstagram.com/wp-content/uploads/2022/01/instagram-logo.jpg" alt=""></div>
+            <button type="button" onclick="location.href='https://www.instagram.com/ridzjabar113/?igshid=MzMyNGUyNmU2YQ%3D%3D'">
+                <div>Instagram</div>
+                </button>
+        </div>
+        <div class="box box-3">
+            <div class="cover"><img src="https://i.abcnewsfe.com/a/96f823f4-85a6-499a-9c8a-08e6b7818372/230724_techbytes_hpMain_16x9.jpg?w=992" alt=""></div>
+            <button type="button" onclick="location.href='https://twitter.com/'">
+                <div>Tweeter</div>
+                </button>
+        </div>
+        <div class="box box-4">
+            <div class="cover"><img src="https://www.youtube.com/img/desktop/yt_1200.png" alt=""></div>
+            <button type="button" onclick="location.href='https://youtube.com/@FarrAsik?si=Mr3ZsUO42FkYu6MP'">
+                <div>Tweeter</div>
+                </button>
+    </div>
+
+<a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a>
+</body>
+</html>
